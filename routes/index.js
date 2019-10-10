@@ -1,8 +1,7 @@
-module.exports=router;
 
 const express = require('express');
 
-const router = express.router();
+const router = express.Router();
 
 router.get('/', (req, res)=>{
     res.send('App ta ON k7!!')
@@ -13,3 +12,4 @@ router.use((req, res, next)=>{
     next();
 })
 
+module.exports = router;

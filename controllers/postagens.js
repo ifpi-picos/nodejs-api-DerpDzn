@@ -1,6 +1,6 @@
 import { runInThisContext } from "vm";
 
-Class Postagens{
+class Postagens{
     constructor(postagemModel){
         this.Postagem = postagemModel;
     }
@@ -10,7 +10,7 @@ Class Postagens{
         return 'Adicionado com sucesso';
     }
 
-    async consultarTodso(){
+    async consultarTodos(){
         const postagem = await this.Postagem.find({});
         return postagem
     }

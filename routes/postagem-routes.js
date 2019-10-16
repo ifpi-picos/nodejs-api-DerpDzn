@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const PostagemController = require('../controllers/postagens');
-const PostagemModel = require('../model/postagem');
+const PostagemModel = require('../models/postagem');
 
 router.get('/', async(req, res)=>{
     const postagens = await PostagemController.consultarTodos();
@@ -10,7 +10,7 @@ router.get('/', async(req, res)=>{
 
 router.post('/', (req, res)=>{
     const novaPostagem = req.body;
-    const retorno = await PostagemController.adicionar(novaPostagem );
+    const retorno = await PostagemController.adicionar(novaPostagem);
     res.send(retorno)
 });
 

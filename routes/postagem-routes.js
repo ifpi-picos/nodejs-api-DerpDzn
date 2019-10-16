@@ -8,7 +8,7 @@ router.get('/', async(req, res)=>{
     res.send(postagens)
 });
 
-router.post('/', (req, res)=>{
+router.post('/', async(req, res)=>{
     const novaPostagem = req.body;
     const retorno = await PostagemController.adicionar(novaPostagem);
     res.send(retorno)

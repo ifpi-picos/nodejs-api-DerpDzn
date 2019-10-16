@@ -1,5 +1,3 @@
-import { runInThisContext } from "vm";
-
 class Postagens{
     constructor(postagemModel){
         this.Postagem = postagemModel;
@@ -12,7 +10,7 @@ class Postagens{
 
     async consultarTodos(){
         const postagem = await this.Postagem.find({});
-        return postagem
+        return postagem;
     }
 }
 

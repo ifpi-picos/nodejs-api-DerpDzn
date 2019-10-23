@@ -2,8 +2,8 @@ class Postagens{
     constructor(postagemModel){
         this.Postagem = postagemModel;
     }
-    async adicionar (postagemDT0){
-        const postagem = new this.Postagem(postagemDT0)
+    async adicionar (postagemDTO){
+        const postagem = new this.Postagem(postagemDTO)
         await postagem.save();
         return 'Adicionado com sucesso';
     }
@@ -11,6 +11,19 @@ class Postagens{
     async consultarTodos(){
         const postagem = await this.Postagem.find({});
         return postagem;
+    }
+
+    async consultarPorId(id){
+        const postagem = await this.Postagem.findById(id);
+        return postagem;
+    }
+
+    async alterarPorId(id, postagemDTO){
+        await this.Postagem.updateOne({_id: id}, postagemDTO);
+    }
+
+    async removerPorId(id, postagemDTO){
+        await this.Postagem.deleteOne({_id: id}, postagemDTO);
     }
 }
 
